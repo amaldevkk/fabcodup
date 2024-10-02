@@ -1,0 +1,268 @@
+/* Product Detail Section */
+.sec-product-detail {
+    background-color: #f9f9f9;
+    padding-top: 65px;
+    padding-bottom: 60px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.p-l-25, .p-r-30, .p-lr-0-lg {
+    padding-left: 25px;
+    padding-right: 30px;
+}
+
+.wrap-slick3 {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.wrap-slick3-dots, .wrap-slick3-arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick3 .item-slick3 {
+    position: relative;
+}
+
+.wrap-pic-w {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.wrap-pic-w img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.wrap-pic-w:hover {
+    transform: scale(1.05);
+}
+
+.how-pos1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.wrap-pic-w:hover .how-pos1 {
+    opacity: 1;
+}
+
+.flex-c-m {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bor0 {
+    border: none;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.cl10 {
+    color: #fff;
+}
+
+.bg0 {
+    background-color: #000;
+}
+
+.hov-btn3 {
+    cursor: pointer;
+}
+
+.trans-04 {
+    transition: all 0.4s;
+}
+
+.mtext-105, .mtext-106 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.mtext-105 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.mtext-106 {
+    font-size: 20px;
+    color: #ff6f61;
+    margin-top: 10px;
+    display: block;
+}
+
+.stext-102 {
+    font-size: 14px;
+    color: #888;
+    margin-top: 20px;
+}
+
+.p-t-33 .size-203, .size-204 {
+    width: 100px;
+}
+
+.size-204 .rs1-select2 select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.wrap-num-product {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.btn-num-product-down, .btn-num-product-up {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f0f0f0;
+    transition: all 0.3s;
+}
+
+.btn-num-product-down:hover, .btn-num-product-up:hover {
+    background-color: #ddd;
+}
+
+.num-product {
+    width: 50px;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+.bg1 {
+    background-color: #ff6f61;
+}
+
+.hov-btn1:hover {
+    background-color: #ff3b2f;
+}
+
+.flex-w {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-m {
+    margin: 10px 0;
+}
+
+.flex-r-m {
+    margin-right: auto;
+}
+
+.p-lr-25 {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.bor10 {
+    border-radius: 10px;
+}
+
+.m-t-50, .p-t-43 {
+    margin-top: 50px;
+    padding-top: 43px;
+}
+
+.nav-tabs .nav-link {
+    font-size: 14px;
+    color: #333;
+    margin-right: 15px;
+    border: none;
+    padding: 10px 15px;
+}
+
+.nav-tabs .nav-link.active {
+    border-bottom: 2px solid #ff6f61;
+    color: #ff6f61;
+}
+
+.tab-content .tab-pane {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.size-109 {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.size-207 .mtext-107 {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.wrap-rating i {
+    cursor: pointer;
+}
+
+.size-110, .size-111 {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.bg7 {
+    background-color: #ff6f61;
+}
+
+.bor11 {
+    border-radius: 5px;
+}
+
+.tooltip100 {
+    position: relative;
+}
+
+.tooltip100[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* General icon styling */
+.fa-expand {
+    font-size: 20px;             /* Adjust the icon size */
+    color: #555;                 /* Icon color */
+    transition: color 0.3s;      /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the icon */
+.fa-expand:hover {
+    color: #333;                 /* Change color on hover */
+}

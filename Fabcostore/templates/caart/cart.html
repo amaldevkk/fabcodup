@@ -1,0 +1,280 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>EShopper - Bootstrap Shop Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    
+     <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    
+        <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    
+        <!-- Libraries Stylesheet -->
+    <link href="{% static 'static/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    
+        <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>  
+<body>
+    <!--top bar open-->
+    <div class="container-fluid">
+        <div class="row bg-secondary py-2 px-xl-5">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark" href="">FAQs</a>
+                    <span class="text-muted px-2">|</span>
+                    <a class="text-dark" href="">Help</a>
+                    <span class="text-muted px-2">|</span>
+                    <a class="text-dark" href="">Support</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-dark pl-2" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center py-3 px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a href="" class="text-decoration-none">
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">FABCO</span>Shopper</h1>
+                </a>
+            </div>
+            <div class="col-lg-6 col-6 text-left">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for products">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3 col-6 text-right">
+                <div class="d-inline-flex">
+                    <p class="m-0"><a href="{% url 'index' %}">Home</a></p>
+                    <p class="m-0 px-2">-</p>
+                    <p class="m-0">Cart</p>
+                </div>
+
+
+                <a href="" class="btn border">
+                    <i class="fas fa-heart text-primary"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="" class="btn border">
+                    <i class="fas fa-shopping-cart text-primary"></i>
+                    <span class="badge">0</span>
+                </a>
+            </div>
+        </div>
+    </div>
+<body/>   
+<!--top bar end--> 
+
+<body>
+    <header>
+  <!-- Jumbotron -->
+  <div class="p-3 text-center bg-white border-bottom">
+    <div class="container">
+      <div class="row gy-3">
+        <!-- Left elements -->
+        
+        <!-- Left elements -->
+
+        <!-- Center elements -->
+        
+        <!-- Center elements -->
+
+        <!-- Right elements -->
+        
+        <!-- Right elements -->
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+
+ 
+</header>
+
+<!-- cart + summary -->
+<section class="bg-light my-5">
+  <div class="container">
+    <div class="row">
+      <!-- cart -->
+      <div class="col-lg-9">
+        <div class="card border shadow-0">
+          <div class="m-4">
+            <h4 class="card-title mb-4">Your shopping cart</h4>
+            <div class="row gy-3 mb-4">
+              {% for item in cart_item %}
+              <div class="col-lg-5">
+                <div class="me-lg-5">
+                  <div class="d-flex">
+                    <img src="{{ item.product.image.url  }}" class="border rounded me-3" style="width: 96px; height: 96px;" />
+                    <div class="">
+                      <a href="#" class="nav-link">{{ item.product.name }}</a>
+                      <p class="text-muted">{{ item.product.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 col-sm-6 col-6 d-flex flex-row flex-lg-column flex-xl-row text-nowrap">
+                <div class="">
+                  <select style="width: 100px;" class="form-select me-4">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+                <div class="">
+                  <text class="h6">${{ item.product.price }}</text> <br />
+                  <small class="text-muted text-nowrap"> ${{item.product.per_item_price }} / per item </small>
+                </div>
+              </div>
+              <div class="col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2">
+                <div class="float-md-end">
+                  <a href="#!" class="btn btn-light border px-2 icon-hover-primary"><i class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+                  <a href="{% url 'cart:remove_from_cart' item.id %}" class="btn btn-light border text-danger icon-hover-danger"> Remove</a>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+      
+            <div class="border-top pt-4 mx-4 mb-4">
+              <p><i class="fas fa-truck text-muted fa-lg"></i> Free Delivery within 1-2 weeks</p>
+              <p class="text-muted">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+            <!-- cart -->
+      <!-- summary -->
+      <div class="col-lg-3">
+        <div class="card mb-3 border shadow-0">
+          <div class="card-body">
+            
+          </div>
+        </div>
+        <div class="card shadow-0 border">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Total price:</p>
+              <p class="mb-2">$329.00</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Discount:</p>
+              <p class="mb-2 text-success">-$60.00</p>
+            </div>
+           
+            <hr />
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Total price:</p>
+              <p class="mb-2 fw-bold">$283.00</p>
+            </div>
+
+            <div class="mt-3">
+              <a href="#" class="btn btn-success w-100 shadow-0 mb-2"> Make Purchase </a>
+              <a href="{% url 'index' %}" class="btn btn-light w-100 border mt-2"> Back to shop </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- summary -->
+    </div>
+  </div>
+</section>
+<!-- cart + summary -->
+
+<!-- Recommended -->
+
+<!-- Footer -->
+<div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+    <div class="row px-xl-5 pt-5">
+        <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+            <a href="" class="text-decoration-none">
+                <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">FABCO</span>Shopper</h1>
+            </a>
+            <p>At Fabco, we believe that fashion is a unique expression of individuality, and that's why we specialize in dress customization. Our mission is to provide you with the highest quality clothing that not only fits perfectly but also aligns with your personal style..</p>
+            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Kovilakam Building Chelakkara</p>
+            <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>fabco@gmail.com</p>
+            <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>9061231228</p>
+        </div>
+        <div class="col-lg-8 col-md-12">
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-dark mb-2" href="{% url 'index' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                        <a class="text-dark mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                        <a class="text-dark mb-2" href="{% url 'detail' %}"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                        <a class="text-dark mb-2" href="{% url 'cart:cart' %}"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                        <a class="text-dark mb-2" href=" Checkout"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                        <a class="text-dark" href="{% url 'contact' %}"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-5">
+                    <h5 class="font-weight-bold text-dark mb-4">Newsletter</h5>
+                    <form action="">
+                        <div class="form-group">
+                            <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
+                                required="required" />
+                        </div>
+                        <div>
+                            <button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row border-top border-light mx-xl-5 py-4">
+        
+        <div class="col-md-6 px-xl-0 text-center text-md-right">
+            <img class="img-fluid" src="{% static 'img/payments.png '  %}" alt="">
+        </div>
+    </div>
+</div>   
+
+<!-- Footer end -->
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
+
