@@ -99,6 +99,25 @@
         }
         button.parent().parent().find('input').val(newVal);
     });
+    // readmore/read less functionality
+    function toggleReadMore(event) {
+        event.preventDefault();
+        var moreText = event.target.previousElementSibling.querySelector('.more-text');
+        var linkText = event.target;
+    
+        if (moreText.style.display === 'none' || moreText.style.display === '') {
+            // Show the full description
+            moreText.style.display = 'inline';
+            linkText.textContent = 'Read Less';  // Change the text to "Read Less"
+        } else {
+            // Hide the full description and show the truncated version
+            moreText.style.display = 'none';
+            linkText.textContent = 'Read More';  // Change the text back to "Read More"
+        }
+    }
+    
+    $(document).on('click', '.read-more', toggleReadMore);
+        
     
 })(jQuery);
 

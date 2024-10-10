@@ -73,29 +73,35 @@
                 <p class="mb-4">{{ product.description }}</p>
                 <div class="d-flex mb-3">
                     <p class="text-dark font-weight-medium mb-0 mr-3">Sizes:</p>
-                    <form>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-1" name="size">
-                            <label class="custom-control-label" for="size-1">XS</label>
+                    <form method="POST" action="{% url 'cart:increase_quantity' product.id %}">
+                        {% csrf_token %}
+                        
+                        <!-- Size selection -->
+                        <div>
+                            <label>Select Size:</label><br>
+                            
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-2" name="size" value="S" {% if item.size == 'S' %}checked{% endif %}>
+                                <label class="custom-control-label" for="size-2">S</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-3" name="size" value="M" {% if item.size == 'M' %}checked{% endif %}>
+                                <label class="custom-control-label" for="size-3">M</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-4" name="size" value="L" {% if item.size == 'L' %}checked{% endif %}>
+                                <label class="custom-control-label" for="size-4">L</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-5" name="size" value="XL" {% if item.size == 'XL' %}checked{% endif %}>
+                                <label class="custom-control-label" for="size-5">XL</label>
+                            </div>
                         </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-2" name="size">
-                            <label class="custom-control-label" for="size-2">S</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-3" name="size">
-                            <label class="custom-control-label" for="size-3">M</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-4" name="size">
-                            <label class="custom-control-label" for="size-4">L</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-5" name="size">
-                            <label class="custom-control-label" for="size-5">XL</label>
-                        </div>
+                    
+                        <!-- Submit Button -->
+                       
                     </form>
-                </div>
+                    </div>
                 <div class="d-flex mb-4">
                     <p class="text-dark font-weight-medium mb-0 mr-3">Colors:</p>
                     <form>
@@ -122,17 +128,23 @@
                     </form>
                 </div>
                 <div class="d-flex align-items-center mb-4 pt-2">
-                    <div class="input-group quantity mr-3" style="width: 130px;">
+                    <div class="input-group">
                         <div class="input-group-btn">
-                            <button class="btn btn-primary btn-minus" >
-                            <i class="fa fa-minus"></i>
-                            </button>
+                            {%csrf_token %}
+                            <!-- Decrease quantity button -->
+                            <a href="{% url 'cart:decrease_quantity' item.product.id %}" class="btn btn-primary btn-minus">
+                                <i class="fa fa-minus"></i>
+                            </a>
                         </div>
-                        <input type="text" class="form-control bg-secondary text-center" value="1">
+                        
+                        <!-- Display current quantity -->
+                        <input type="text" class="form-control text-center" value="{{ item.product.quantity }}" readonly>
+                        
                         <div class="input-group-btn">
-                            <button class="btn btn-primary btn-plus">
+                            <!-- Increase quantity button -->
+                            <a href="{% url 'cart:increase_quantity' item.product.id %}" class="btn btn-primary btn-plus">
                                 <i class="fa fa-plus"></i>
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <form action="{% url 'cart:add_to_cart' product.id %}" method="post">

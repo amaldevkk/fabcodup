@@ -9582,3 +9582,24 @@ a.text-dark:hover, a.text-dark:focus {
     transform: translateY(-15px);
   }
 }
+
+.product-info {
+  border-left: 2px solid #ccc; /* Optional to add border separation between the image and text */
+  padding-left: 15px;
+}
+/* Hide the full description initially */
+.more-text {
+  display: none;
+}
+
+/* Style the Read More/Read Less link */
+.read-more {
+  color: #007bff;  /* Bootstrap primary color */
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+

@@ -19,5 +19,5 @@ urlpatterns = [
 
       path ('productdetls/<int:pk>/', views.productsdetails, name='productsdetils'),
 
-    
+
 ]

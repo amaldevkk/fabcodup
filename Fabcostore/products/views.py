@@ -1,7 +1,8 @@
-from django.shortcuts import render,get_object_or_404 
+from django.shortcuts import render,get_object_or_404 ,redirect
 from django.db.models import Q
 
 from .models import Product
+from cart. models import Cartitem
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
@@ -148,4 +149,6 @@ def productsdetails(request,pk):
 
    
     return render(request, 'products_items_details.html', {'product' : product})
+
+
 
